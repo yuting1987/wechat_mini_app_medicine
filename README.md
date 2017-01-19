@@ -1,2 +1,2 @@
-# wechat_mini_app_medicine
-医药
+# wechat_mini_server
+后台服务
