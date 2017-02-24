@@ -1,30 +1,50 @@
 package com.main;
 
-/**
- * Created by yuting on 2017/1/19.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class User {
-    Long id;
-    Object name;
-    Object age;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(nullable = false)
+    String name;
+
+    @Column(nullable = false)
+    Integer age;
+
+    public User() {
+    }
+
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public Object getName() {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public Object getAge() {
-        return age;
-    }
-
-    public void setName(Object name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setAge(Object age) {
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
         this.age = age;
     }
 
