@@ -1,4 +1,4 @@
-package com.main;
+package com.account;
 
 import javax.persistence.*;
 
