@@ -1,5 +1,6 @@
-package com.details;
+package com.repository;
 
+import com.details.Details;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

@@ -1,8 +1,11 @@
 package com.details;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Component
 @Entity
 @Table(name = "details")
 public class Details {

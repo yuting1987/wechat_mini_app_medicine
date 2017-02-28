@@ -1,5 +1,7 @@
-package com.details;
+package com.api;
 
+import com.details.Details;
+import com.repository.DetailsRepository;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

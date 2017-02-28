@@ -1,5 +1,7 @@
-package com.account;
+package com.api;
 
+import com.account.User;
+import com.repository.UserRepository;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

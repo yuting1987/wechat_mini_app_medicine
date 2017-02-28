@@ -1,7 +1,10 @@
 package com.account;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
+@Component
 @Entity
 @Table(name = "user")
 public class User {
@@ -11,10 +14,10 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    String name;
+    public String name;
 
     @Column(nullable = false)
-    Integer age;
+    public Integer age;
 
     public User() {
     }
