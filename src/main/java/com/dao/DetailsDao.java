@@ -1,12 +1,16 @@
-package com.repository;
+package com.dao;
 
-import com.details.Details;
+import com.details.Detail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 
-public interface DetailsRepository extends JpaRepository<Details, Long> {
 
-//    Details findByName(String name);
+public interface DetailsDao extends JpaRepository<Detail, Long> {
+
+    List<Detail> findByType(String type);
+
+    Detail findById(Long id);
 
 //    Details findByNameAndAge(String name, Integer age);
 

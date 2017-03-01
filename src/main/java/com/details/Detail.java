@@ -8,34 +8,34 @@ import java.util.Date;
 @Component
 @Entity
 @Table(name = "details")
-public class Details {
+public class Detail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false)
-    String type;
+    public String type;
 
     @Column(nullable = false)
-    String title;
+    public String title;
 
     @Column(nullable = false)
-    String des;
+    public String des;
 
     @Column(nullable = false)
-    String iconUrl;
+    public String iconUrl;
 
     @Column(nullable = true)
-    String imgUrl;
+    public String imgUrl;
 
     @Column(nullable = false)
-    String vendor;
+    public String vendor;
 
     @Column(nullable = true)
-    Date date;
+    public Date date;
 
-    public Details() {
+    public Detail() {
     }
 
 
@@ -103,12 +103,14 @@ public class Details {
         this.date = date;
     }
 
-    public Details(String type, String title, String des, String iconUrl, String imgUrl, String vendor) {
+    public Detail(String type, String title, String des, String iconUrl, String imgUrl, String vendor , Date date) {
         this.type = type;
         this.title = title;
         this.des = des;
         this.iconUrl = iconUrl;
         this.imgUrl = imgUrl;
         this.vendor = vendor;
+        this.date = date;
     }
+
 }

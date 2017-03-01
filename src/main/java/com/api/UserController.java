@@ -1,7 +1,7 @@
 package com.api;
 
 import com.account.User;
-import com.repository.UserRepository;
+import com.dao.UserDao;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserDao userRepository;
 
     @ApiOperation(value = "创建用户", notes = "根据User对象创建用户")
     @ApiImplicitParam(name = "user", value = "用户信息实体对象", required = true, dataType = "User")
