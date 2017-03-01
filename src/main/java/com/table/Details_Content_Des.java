@@ -20,4 +20,11 @@ public class Details_Content_Des {
 
     @Column(nullable = false)
     public String des;
+
+    public Details_Content_Des() {}
+
+    public Details_Content_Des(Long contentId, String des) {
+        this.contentId = contentId;
+        this.des = des;
+    }
 }

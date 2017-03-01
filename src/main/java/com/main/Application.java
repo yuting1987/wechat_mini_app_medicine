@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan( basePackages = "com.*")
 @SpringBootApplication
 @EnableTransactionManagement
-@EnableJpaRepositories( basePackages = "com.repository" )
+@EnableJpaRepositories( basePackages = "com.dao" )
 
 public class Application {
 	public static void main(String[] args) {

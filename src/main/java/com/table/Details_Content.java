@@ -24,5 +24,13 @@ public class Details_Content {
 
     @Column(nullable = true)
     public String image;
+
+    public Details_Content() {}
+
+    public Details_Content(Long detailId, String title, String image) {
+        this.detailId = detailId;
+        this.title = title;
+        this.image = image;
+    }
 }
 

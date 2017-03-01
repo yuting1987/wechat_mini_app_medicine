@@ -1,13 +1,7 @@
 package com.dao;
 
-import com.details.Content;
-import org.springframework.data.jpa.repository.JpaRepository;
+//public interface ContentDao extends JpaRepository<Content, Long> {
 
-import java.util.List;
+//    List<Content> findByDetailId(Long detailId);
 
-
-public interface ContentDao extends JpaRepository<Content, Long> {
-
-    List<Content> findByDetailId(Long detailId);
-
-}
+//}
