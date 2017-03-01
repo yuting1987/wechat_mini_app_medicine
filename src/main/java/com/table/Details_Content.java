@@ -11,10 +11,10 @@ import javax.persistence.*;
 @Component
 @Entity
 @Table(name = "details_content")
-public class Details_Content {
+public class Details_Content{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    public Long id;
 
     @Column(nullable = false)
     public Long detailId;
@@ -24,6 +24,10 @@ public class Details_Content {
 
     @Column(nullable = true)
     public String image;
+
+    public Long getId() {
+        return id;
+    }
 
     public Details_Content() {}
 

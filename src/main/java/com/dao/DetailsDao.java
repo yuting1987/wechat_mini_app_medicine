@@ -3,11 +3,13 @@ package com.dao;
 import com.table.Details;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface DetailsDao extends JpaRepository<Details, Long> {
 
-//    List<Detail> findByType(String type);
+    List<Details> findByType(String type);
 
-//    Detail findById(Long id);
+    Details findById(Long id);
 
 //    Details findByNameAndAge(String name, Integer age);
 

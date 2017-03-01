@@ -1,7 +1,12 @@
 package com.dao;
 
-//public interface DesDao extends JpaRepository<Des, Long> {
+import com.table.Details_Content_Des;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-//    List<Des> findByContentId(Long contentId);
+import java.util.List;
 
-//}
+public interface DesDao extends JpaRepository<Details_Content_Des, Long> {
+
+    List<Details_Content_Des> findByContentId(Long contentId);
+
+}
