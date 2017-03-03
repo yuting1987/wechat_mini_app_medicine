@@ -12,7 +12,8 @@ import java.util.Date;
 @Component
 @Entity
 @Table(name = "details")
-public class Details {
+public class Details{
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

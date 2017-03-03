@@ -5,6 +5,7 @@ import com.dao.DesDao;
 import com.dao.DetailsDao;
 import com.output.Content;
 import com.output.Detail;
+import com.output.Response;
 import com.table.Details;
 import com.table.Details_Content;
 import com.table.Details_Content_Des;
@@ -41,8 +42,9 @@ public class DetailsController {
 
     @ApiOperation(value = "获取详情列表", notes = "根据类型获取详情列表")
     @RequestMapping(value = "/queryDetailsByType", method = RequestMethod.GET)
-    public List<Details> queryDetailsByType(@ApiParam(name = "type", value = "类型", required = true) @RequestParam String type) {
-        return detailsDao.findByType(type);
+    public Response queryDetailsByType(@ApiParam(name = "type", value = "类型", required = true) @RequestParam String type) {
+        Response res = new Response(detailsDao.findByType(type));
+        return res;
     }
 
     @ApiOperation(value = "通过id获得指定信息", notes = "通过id获得Details指定信息")
