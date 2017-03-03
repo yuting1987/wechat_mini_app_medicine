@@ -35,7 +35,7 @@ public class DetailsController {
     @ApiImplicitParam(name = "details", value = "详情的实体对象", required = true, dataType = "Details")
     @RequestMapping(value = "/addDetails", method = RequestMethod.POST)
     public String addDetails(@RequestBody Details details) {
-        detailsDao.save(new Details(details.type, details.title, details.des, details.iconUrl, details.imgUrl, details.vendor ,details.date));
+        detailsDao.save(new Details(details.type, details.title, details.des, details.iconUrl, details.imgUrl, details.vendor, details.date));
         return "success";
     }
 
@@ -53,17 +53,23 @@ public class DetailsController {
         List<Content> contentList = new ArrayList<>();
         List<String> desStrList = new ArrayList<String>();
 
-        for(int i = 0, l = list.size(); i < l; i++) {
+        for (int i = 0, l = list.size(); i < l; i++) {
             Details_Content d = list.get(i);
             List<Details_Content_Des> desList = desDao.findByContentId(d.getId());
 
-            for (int j = 0 , len = desList.size(); j < len ; j++){
+            for (int j = 0, len = desList.size(); j < len; j++) {
                 desStrList.add(desList.get(i).getDes());
             }
-            Content c = new Content(d,desStrList);
+            Content c = new Content(d, desStrList);
             contentList.add(c);
         }
 
-        return new Detail(details,contentList);
+        return new Detail(details, contentList);
+    }
+
+    @ApiOperation(value = "通过指定KEY", notes = "通过指定KEY返回列表")
+    @RequestMapping(value = "/queryDetailsByKey", method = RequestMethod.GET)
+    public List<Details> queryDetailsByKey(@ApiParam(name = "key", value = "key", required = true) @RequestParam String key) {
+        return detailsDao.findByTitleLike(key);
     }
 }

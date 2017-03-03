@@ -2,6 +2,8 @@ package com.dao;
 
 import com.table.Details;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -11,9 +13,9 @@ public interface DetailsDao extends JpaRepository<Details, Long> {
 
     Details findById(Long id);
 
-//    Details findByNameAndAge(String name, Integer age);
+    @Query("from Details d where d.title like %:title%")
+    List<Details> findByTitleLike(@Param("title") String title);
 
-//    @Query("from User u where u.name=:name")
-//    Details findUser(@Param("name") String name);
-
+    @Query("from Details d where d.type=:type and d.title like %:title%")
+    List<Details> findByTypeAndTitleLike(@Param("type") String type, @Param("title") String title);
 }

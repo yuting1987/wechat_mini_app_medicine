@@ -65,6 +65,12 @@
 			<version>2.2.2</version>
 		</dependency>
 
+		<!--抓取运行了sql的插件-->
+		<dependency>
+			<groupId>com.googlecode.log4jdbc</groupId>
+			<artifactId>log4jdbc</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
